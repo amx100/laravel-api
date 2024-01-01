@@ -5,24 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Drug extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'CUSTOMER_ID';
+    protected $primaryKey = 'DRUG_ID';
     public $incrementing = false;
-    
 
     public $timestamps = false;
 
     protected $fillable = [
-        'FIRST_NAME', 
-        'LAST_NAME', 
-        'DOB'
+        'NAME', 
+        'TYPE', 
+        'DOSE', 
+        'SELLING_PRICE', 
+        'EXPIRATION_DATE', 
+        'QUANTITY'
     ];
 
     public function purchaseHistory()
     {
-        return $this->hasMany(PurchaseHistory::class, 'CUSTOMER_ID');
+        return $this->hasMany(PurchaseHistory::class, 'DRUG_ID');
     }
 }
