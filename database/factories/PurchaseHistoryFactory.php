@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
 namespace Database\Factories;
 
 use App\Models\PurchaseHistory;

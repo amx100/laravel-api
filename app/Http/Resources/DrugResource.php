@@ -19,7 +19,10 @@ class DrugResource extends JsonResource
             'type' => $this->TYPE,
             'dose' => $this->DOSE,
             'sellingPrice' => $this->SELLING_PRICE,
+<<<<<<< HEAD
             'expiry' => $this->EXPIRY,
+=======
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
             'expirationDate' => $this->EXPIRATION_DATE,
             'quantity' => $this->QUANTITY,
         ];

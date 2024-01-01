@@ -11,7 +11,10 @@ class DrugsFilter extends ApiFilter
         'type' => ['eq'],
         'dose' => ['eq', 'gt', 'lt'],
         'sellingPrice' => ['eq', 'gt', 'lt'],
+<<<<<<< HEAD
         'expiry' => ['eq', 'gt', 'lt'],
+=======
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
         'expirationDate' => ['eq', 'gt', 'lt'],
         'quantity' => ['eq', 'gt', 'lt'],
     ];

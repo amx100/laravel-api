@@ -16,10 +16,23 @@ class PurchaseHistoryController extends Controller
     /**
      * Display a listing of the resource.
      */
+<<<<<<< HEAD
     public function index(Request $request)
     {
         $purchaseHistories = PurchaseHistory::with('customer')->paginate();
         return PurchaseHistoryResource::collection($purchaseHistories);
+=======
+    public function index(Request $request, PurchaseHistoriesFilter $filter)
+    {
+        $query = PurchaseHistory::query();
+
+        // Apply filters
+        $query = $filter->apply($query, $request->all());
+
+        // Pagination
+        $purchaseHistories = $query->with('customer', 'drug')->paginate();
+        return new PurchaseHistoryCollection($purchaseHistories);
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
     }
 
     /**
@@ -36,6 +49,10 @@ class PurchaseHistoryController extends Controller
      */
     public function show(PurchaseHistory $purchaseHistory)
     {
+<<<<<<< HEAD
+=======
+        $purchaseHistory->load('customer', 'drug');
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
         return new PurchaseHistoryResource($purchaseHistory);
     }
 
@@ -56,4 +73,8 @@ class PurchaseHistoryController extends Controller
         $purchaseHistory->delete();
         return response()->json(['message' => 'PurchaseHistory deleted successfully']);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d

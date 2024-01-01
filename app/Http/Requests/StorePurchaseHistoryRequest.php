@@ -13,7 +13,11 @@ class StorePurchaseHistoryRequest extends FormRequest
      */
     public function authorize()
     {
+<<<<<<< HEAD
         return false;
+=======
+        return true; 
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
     }
 
     /**
@@ -24,7 +28,15 @@ class StorePurchaseHistoryRequest extends FormRequest
     public function rules()
     {
         return [
+<<<<<<< HEAD
             //
+=======
+            'CUSTOMER_ID' => 'required|exists:customers,CUSTOMER_ID',
+            'DRUG_ID' => 'required|exists:drugs,DRUG_ID',
+            'PURCHASE_DATE' => 'required|date',
+            'QUANTITY_PURCHASED' => 'required|integer|min:1',
+            'TOTAL_BILL' => 'required|numeric|min:0',
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
         ];
     }
 }

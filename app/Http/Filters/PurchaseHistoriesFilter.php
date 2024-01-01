@@ -2,6 +2,10 @@
 namespace App\Http\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
+<<<<<<< HEAD
+=======
+use App\Http\Filters\ApiFilter;
+>>>>>>> 625c3835af76ed8cf1a1ca0b652452689a6c6a9d
 
 class PurchaseHistoriesFilter extends ApiFilter
 {
