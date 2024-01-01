@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
+    protected $table = 'customers';
+    protected $primaryKey = 'CUSTOMER_ID';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'FIRST_NAME', 
+        'LAST_NAME', 
+        'DOB'
+    ];
+
+    public function purchaseHistory()
+    {
+        return $this->hasMany(PurchaseHistory::class, 'CUSTOMER_ID');
+    }
 }
