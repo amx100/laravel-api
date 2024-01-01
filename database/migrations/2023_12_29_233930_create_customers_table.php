@@ -8,23 +8,22 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
-    {
-        Schema::create('customers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+    public function up(): void
+{
+    Schema::create('customers', function (Blueprint $table) {
+        $table->id('CUSTOMER_ID')->index(); // Dodaj indeks na CUSTOMER_ID
+        $table->string('FIRST_NAME', 45);
+        $table->string('LAST_NAME', 45);
+        $table->date('DOB');
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('customers');
     }
